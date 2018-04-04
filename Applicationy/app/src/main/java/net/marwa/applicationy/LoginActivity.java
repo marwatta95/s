@@ -41,7 +41,7 @@ private ProgressDialog progressDialog;
 
         if(firebaseAuth.getCurrentUser()!=null){
             finish();
-            startActivity(new Intent(getApplicationContext(), activity_profile.class));
+            startActivity(new Intent(getApplicationContext(), UserHomeActivity.class));
         }
         databaseReference= FirebaseDatabase.getInstance().getReference();
 

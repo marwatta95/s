@@ -40,7 +40,10 @@ public class activity_profile extends AppCompatActivity implements View.OnClickL
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
-
+        if(firebaseAuth.getCurrentUser()!=null){
+            finish();
+            startActivity(new Intent(getApplicationContext(), UserHomeActivity.class));
+        }
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
         databaseReference= FirebaseDatabase.getInstance().getReference();

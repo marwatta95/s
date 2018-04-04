@@ -230,7 +230,7 @@ String food1="";
                /// DatabaseReference pushRef = restaurantRef.push();
                 String pushId = restaurantRef.getKey();
                party.setPushID(pushId);
-                restaurantRef.setValue(party);
+           //     restaurantRef.setValue(party);
                 dr.child("Party").child(id).setValue(party);
 
                 //    final User user2 = (User) (user.getClass()).addParty(party);
