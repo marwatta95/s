@@ -237,7 +237,7 @@
                         android:adjustViewBounds="true"
                         android:padding="5dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/invitation" />
+                        android:src="@drawable/head" />
 
                     <ImageButton
                         android:id="@+id/custom"
@@ -253,9 +253,6 @@
                         android:scaleType="fitXY"
                         android:src="@drawable/custom" />
                 </LinearLayout>
-
-
-
 
 
 

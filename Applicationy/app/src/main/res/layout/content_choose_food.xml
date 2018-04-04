@@ -8,6 +8,14 @@
     tools:context="net.marwa.applicationy.ChooseFoodActivity"
     tools:showIn="@layout/activity_choose_food">
 
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,16 +47,15 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fillViewport="true">
 
             <ListView
                 android:id="@+id/list1"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                tools:layout_editor_absoluteX="20dp"
-                tools:layout_editor_absoluteY="260dp"></ListView>
+                android:layout_height="wrap_content"
+                ></ListView>
         </ScrollView>
 
         <TextView
@@ -63,14 +70,14 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fillViewport="true">
 
             <ListView
                 android:id="@+id/list2"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></ListView>
+                android:layout_height="wrap_content"></ListView>
         </ScrollView>
 
         <TextView
@@ -85,14 +92,14 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fillViewport="true">
 
             <ListView
                 android:id="@+id/list3"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></ListView>
+                android:layout_height="wrap_content"></ListView>
         </ScrollView>
 
         <TextView
@@ -107,14 +114,14 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fillViewport="true">
 
             <ListView
                 android:id="@+id/list4"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"></ListView>
+                android:layout_height="wrap_content"></ListView>
         </ScrollView>
 
 
@@ -126,4 +133,5 @@
             android:drawableLeft="@drawable/nexticon"
             android:text="NEXT" />
     </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
