@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -102,11 +103,14 @@ public class MyPartiesActivity extends AppCompatActivity {
                     keyList.add(snap.getKey());
 
                     Party party = snap.getValue(Party.class);
-                    if(party==null){
-                    if(party.user.equals(firebaseAuth.getCurrentUser())){
+
+                    FirebaseUser user1 = FirebaseAuth.getInstance().getCurrentUser();
+                    String uid = user1.getUid();
+
+                    if(party.pushID.equals(uid)){
 
                     list.add(party);}
-                }}
+                }
                 myAdapter = new MyAdapterMyParties (MyPartiesActivity.this,R.layout.my_parties_dataitems,list);
                 listView.setAdapter(myAdapter);
 

@@ -14,7 +14,7 @@ public class User {
     public String gender;
     public String address;
     public String dateOfBirth;
-//public  LinkedList<Party> myparties;
+public  LinkedList<Party> myparties;
 
 
     public User(){
@@ -24,12 +24,12 @@ public class User {
         public User(int type,String firstName, String lastName, String gender,String address,String dateOfBirth) {
          this.type=type;  this.firstName=firstName;this.lastName=lastName;this.gender=gender;this.address=address;
          this.dateOfBirth=dateOfBirth;
-     //    myparties=new LinkedList<Party>(  );
+        myparties=new LinkedList<Party>(  );
         }
-//public void addParty(Party p){
+public void addParty(Party p){
 
- //    myparties.add( p );
+     myparties.add( p );
 
-//}
+}
 
 }

@@ -42,7 +42,7 @@ public class MyAdapterMyParties extends ArrayAdapter<Party> {
         String dateLeft=list.get(position).date;
         String dateCurrent = new SimpleDateFormat("dd-MM-YYYY", Locale.getDefault()).format(new Date());
 
-        date.setText( "Days Left : "+(Integer.parseInt( dateLeft.substring( 0,2 ))-Integer.parseInt( dateCurrent.substring( 0,2 ) )));
+        date.setText( "Days Left : "+(Integer.parseInt( dateLeft.substring( 0,1 ))-Integer.parseInt( dateCurrent.substring( 0,1 ) )));
 
         TextView first = (TextView) view.findViewById(R.id.hall);
         String firstn=list.get(position).hall;
