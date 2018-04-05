@@ -32,6 +32,7 @@ public class ChooseMusicActivity extends AppCompatActivity {
     private Button dj;
     private Button band;
     private Button singer;
+    private Button next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -44,6 +45,7 @@ public class ChooseMusicActivity extends AppCompatActivity {
         final  Intent intent1=new Intent(ChooseMusicActivity.this, ChooseBandActivity.class);
         final  Intent intent2=new Intent(ChooseMusicActivity.this, ChooseDjActivity.class);
         final  Intent intent3=new Intent(ChooseMusicActivity.this, ChooseSingerActivity.class);
+        final  Intent intent4=new Intent(ChooseMusicActivity.this,ChooseMakeupActivity.class);
         final String type = intent.getExtras().getString( "type" );
         final String date = intent.getExtras().getString( "date" );
         final String guests = intent.getExtras().getString( "guests" );
@@ -168,6 +170,36 @@ public class ChooseMusicActivity extends AppCompatActivity {
                 intent3.putExtra("photographerO",photographerO);*/
 
                 startActivity(intent3);
+
+
+
+
+            }
+        });
+        next=(Button) findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+                intent4.putExtra( "type", type );
+                intent4.putExtra( "date", date );
+                intent4.putExtra( "guests", guests );
+                intent4.putExtra( "location", location );
+                intent4.putExtra( "hallS", hallS );
+                intent4.putExtra( "decorS", decorS );
+                intent4.putExtra( "appetizerS", appetizerS );
+                intent4.putExtra( "mainS", mainS );
+                intent4.putExtra( "dessertS", dessertS );
+                intent4.putExtra( "cakeS", cakeS );
+                intent4.putExtra("photoS",photographerS);
+             /*   intent1.putExtra("hallO",hallO);
+                intent1.putExtra("decorO",decorO);
+                intent1.putExtra( "appetizerO", appetizerO );
+                intent1.putExtra( "mainO", mainO );
+                intent1.putExtra( "dessertO", dessertO );
+                intent1.putExtra( "cakeO", cakeO );
+                intent1.putExtra("photographerO",photographerO);*/
+                startActivity(intent4);
 
 
 

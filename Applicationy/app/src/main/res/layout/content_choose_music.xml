@@ -64,6 +64,13 @@
 
             android:text="Singer" />
 
+        <Button
+            android:id="@+id/next"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:drawableLeft="@drawable/nexticon"
+            android:text="NEXT" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

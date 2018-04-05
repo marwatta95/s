@@ -92,7 +92,7 @@ public class UserHomeActivity extends AppCompatActivity
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 6; i++){
+        for(int i = 0; i < 3; i++){
             ImageModel imageModel = new ImageModel();
             imageModel.setImage_drawable(myImageList[i]);
             list.add(imageModel);
