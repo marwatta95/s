@@ -40,57 +40,56 @@ public class MyAdapterMyParties extends ArrayAdapter<Party> {
 
         TextView date = (TextView) view.findViewById(R.id.dateLeft);
         String dateLeft=list.get(position).date;
-        String dateCurrent = new SimpleDateFormat("dd-MM-YYYY", Locale.getDefault()).format(new Date());
 
-        date.setText( "Days Left : "+(Integer.parseInt( dateLeft.substring( 0,1 ))-Integer.parseInt( dateCurrent.substring( 0,1 ) )));
+        if(dateLeft !=null) date.setText(dateLeft);
 
         TextView first = (TextView) view.findViewById(R.id.hall);
         String firstn=list.get(position).hall;
-        first.setText( firstn );
+        if(firstn!=null) first.setText( firstn );
         TextView last = (TextView) view.findViewById(R.id.decor);
         String lastn=list.get(position).decor;
-        last.setText( lastn );
+        if(lastn!=null)last.setText( lastn );
         TextView phone = (TextView) view.findViewById(R.id.band);
         String phonen=list.get(position).band;
-        phone.setText( phonen );
+        if(phonen!=null)  phone.setText( phonen );
 
         TextView price = (TextView) view.findViewById(R.id.clown);
         String price1=list.get(position).clown;
-        price.setText(price1);
+        if(price1!=null) price.setText(price1);
 
         TextView gen = (TextView) view.findViewById(R.id.costume);
         String gender=list.get(position).custom;
-        gen.setText( gender );
+        if(gender!=null)  gen.setText( gender );
 
 
         TextView djt = (TextView) view.findViewById(R.id.dj);
         String dj=list.get(position).dj;
-        gen.setText( dj );
+        if(dj!=null)   djt.setText( dj );
 
         TextView hairt = (TextView) view.findViewById(R.id.hair);
         String hair=list.get(position).hair;
-        hairt.setText( hair );
+        if(hair!=null)  hairt.setText( hair );
         TextView singert = (TextView) view.findViewById(R.id.singer);
         String singer=list.get(position).singer;
-        singert.setText( singer );
+        if(singer!=null) singert.setText( singer );
         TextView makeupt = (TextView) view.findViewById(R.id.makeup);
         String makeup=list.get(position).makeup;
-        makeupt.setText( makeup );
+        if(makeup!=null)  makeupt.setText( makeup );
         TextView appetizert = (TextView) view.findViewById(R.id.appetizer);
         String appetizer=list.get(position).appetizer;
-        appetizert.setText( appetizer );
+        if(appetizer!=null) appetizert.setText( appetizer );
         TextView mainCourset = (TextView) view.findViewById(R.id.maincource);
         String mainCourse=list.get(position).mainCourse;
-        mainCourset.setText( mainCourse );
+        if(mainCourse!=null) mainCourset.setText( mainCourse );
         TextView dessertt = (TextView) view.findViewById(R.id.dessert);
         String dessert=list.get(position).dessert;
-        dessertt.setText( dessert );
+        if(dessert!=null) dessertt.setText( dessert );
         TextView caket = (TextView) view.findViewById(R.id.cake);
         String cake=list.get(position).cake;
-        caket.setText( cake );
+        if(cake!=null) caket.setText( cake );
         TextView photot = (TextView) view.findViewById(R.id.photographer);
         String photo=list.get(position).photo;
-        photot.setText( photo );
+       if(photo!=null) photot.setText( photo );
 
 
         return view;

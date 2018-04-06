@@ -25,7 +25,7 @@ public class Hair implements Serializable{
     {
         return price;
     }
-    public String getName(){return first+"  "+last;}
+    public String getName(){return first+" "+last;}
     public String getLast() {
         return last;
     }

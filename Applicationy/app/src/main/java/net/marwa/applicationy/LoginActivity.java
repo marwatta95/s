@@ -85,7 +85,7 @@ private ProgressDialog progressDialog;
 
                              if ((editTextEmail.getText().toString()).equals("marwatta95@gmail.com")) {
                                  finish();
-                                 startActivity(new Intent(getApplicationContext(), HeadActivity.class));
+                                 startActivity(new Intent(getApplicationContext(), AdminActivity.class));
 
 
                              }

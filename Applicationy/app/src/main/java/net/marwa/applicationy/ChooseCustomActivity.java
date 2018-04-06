@@ -137,7 +137,7 @@ public class ChooseCustomActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        intent1.putExtra( "customS", customChoosen[0].getPrice() );
+                        intent1.putExtra( "customS", Double.toString(customChoosen[0].getPrice()) );
                      //   intent1.putExtra( "custom", databaseReference.getRoot().child( CustomActivity.DATABASE_PATH ).child( keyList.get( position ) ).getClass() );
 
                         Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();

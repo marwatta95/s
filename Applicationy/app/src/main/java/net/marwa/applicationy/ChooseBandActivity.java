@@ -125,7 +125,7 @@ public class ChooseBandActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        intent1.putExtra( "bandS", (String)bandChosen[0].getName() );
+                        intent1.putExtra( "bandS", (String)bandChosen[0].getFirst() );
                   //      intent1.putExtra( "bandO", databaseReference.getRoot().child( BandActivity.DATABASE_PATH ).child( keyList.get( position ) ).getClass() );
 
                         Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();

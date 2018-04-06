@@ -7,18 +7,34 @@
     tools:context="net.marwa.applicationy.PartyActivity"
     android:background="#e6e6ff">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_marginBottom="10dp"
+        android:fillViewport="true">
 
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="20dp"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/rectangle"
+            >
 
 
 
@@ -27,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
                 android:text="Hall : None"
                 />
 
@@ -36,14 +53,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="Decoration : None"
                 />
 
             <TextView
-                android:id="@+id/textViewFood"
+                android:id="@+id/textViewFood1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
+                android:text="Food : None"
+                />
+            <TextView
+                android:id="@+id/textViewFood2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20dp"
+
+                android:text="Food : None"
+                />
+            <TextView
+                android:id="@+id/textViewFood3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20dp"
+
+                android:text="Food : None"
+                />
+            <TextView
+                android:id="@+id/textViewFood4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="Food : None"
                 />
 
@@ -52,6 +100,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="Photographer : None"
                 />
 
@@ -61,6 +111,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="Music : None"
                 />
 
@@ -70,6 +122,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="MakeUp Artist : None"
                 />
 
@@ -79,6 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="Hair Dresser : None"
                 />
 
@@ -87,6 +143,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="Costume : None"
                 />
 
@@ -95,12 +153,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:textSize="20dp"
+
                 android:text="Clown : None"
 
                 />
 
 
 
+        </LinearLayout>
+    </ScrollView>
             <Button
                 android:id="@+id/confirm"
                 android:layout_width="match_parent"
@@ -133,6 +195,5 @@
 
     </LinearLayout>
 
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

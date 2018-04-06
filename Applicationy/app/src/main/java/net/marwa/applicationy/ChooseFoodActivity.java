@@ -137,7 +137,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        intent1.putExtra( "appetizerS", foodChosen[0].getPrice() );
+                        intent1.putExtra( "appetizerS", Double.toString(foodChosen[0].getPrice()) );
                     //    intent1.putExtra( "appetizerO", databaseReference.getRoot().child( DATABASE_PATH ).child( keyList.get( position ) ).getClass().toString() );
 
                         Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();
@@ -171,7 +171,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        intent1.putExtra( "mainS", foodChosen[0].getPrice() );
+                        intent1.putExtra( "mainS", Double.toString(foodChosen[0].getPrice()) );
                    //     intent1.putExtra( "mainO", databaseReference.getRoot().child( DATABASE_PATH ).child( keyList.get( position ) ).getClass() );
 
                         Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();
@@ -205,7 +205,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        intent1.putExtra( "dessertS", foodChosen[0].getPrice() );
+                        intent1.putExtra( "dessertS", Double.toString(foodChosen[0].getPrice()) );
                      //   intent1.putExtra( "dessertO", databaseReference.getRoot().child( DATABASE_PATH ).child( keyList.get( position ) ).getClass() );
 
                         Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();
@@ -240,7 +240,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        intent1.putExtra( "cakeS",foodChosen[0].getPrice() );
+                        intent1.putExtra( "cakeS",Double.toString(foodChosen[0].getPrice()) );
                     //    intent1.putExtra( "cakeO", databaseReference.getRoot().child( DATABASE_PATH ).child( keyList.get( position ) ).getClass() );
 
                         Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();

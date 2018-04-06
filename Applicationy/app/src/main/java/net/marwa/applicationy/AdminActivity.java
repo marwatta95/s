@@ -140,7 +140,7 @@ public class AdminActivity extends AppCompatActivity {
         invitation.setOnClickListener(new View.OnClickListener()   {
             public void onClick(View v)  {
                 try {
-                    startActivity(new Intent(getApplicationContext(), InvitationActivity.class));
+                    startActivity(new Intent(getApplicationContext(), HeadActivity.class));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

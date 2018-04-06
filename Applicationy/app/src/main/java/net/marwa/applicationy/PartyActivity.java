@@ -40,6 +40,8 @@ public class PartyActivity extends AppCompatActivity {
     NotificationCompat.Builder notification;
     private static final int uniqueID=3454;
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
+
     private  Button confirm;
     private Button cancel;
     private TextView hall;
@@ -48,13 +50,17 @@ public class PartyActivity extends AppCompatActivity {
     private TextView music;
     private TextView clown;
     private TextView custom;
-    private TextView food;
+    private TextView food1;
+    private TextView food2;
+    private TextView food3;
+    private TextView food4;
     private TextView makeup;
     private TextView hair;
     private DatabaseReference dr;
     private  Party party;
     private Head yourHead;
     List<Head> list;
+    List<Hall> list1;
     private StorageReference storageReference;
    Hall h;
 Hall hallO;
@@ -92,72 +98,87 @@ Hall hallO;
         final String customS=intent.getStringExtra("customS");
 
         list = new ArrayList<>();
+        list1 = new ArrayList<>();
+
         hall = (TextView)findViewById(R.id.textViewHall);
         decor = (TextView)findViewById(R.id.textViewDecor);
-        food = (TextView)findViewById(R.id.textViewFood);
+        food1 = (TextView)findViewById(R.id.textViewFood1);
+        food2 = (TextView)findViewById(R.id.textViewFood2);
+        food3 = (TextView)findViewById(R.id.textViewFood3);
+        food4 = (TextView)findViewById(R.id.textViewFood4);
+
         photographer = (TextView)findViewById(R.id.textViewPhoto);
         clown = (TextView) findViewById(R.id.textViewClown);
         music = (TextView)findViewById(R.id.textViewMusic);
         makeup=(TextView)findViewById(R.id.textViewMakeup);
         hair=(TextView)findViewById(R.id.textViewHairDresser);
         custom = (TextView)findViewById(R.id.textViewCustom);
-        clown.setVisibility(View.INVISIBLE);
 if(hallS!=null)
    hall.setText("Your hall is: "+hallS);
-else hall.setVisibility(View.INVISIBLE);
-if(decorS!=null)
-   decor.setText("Your decoration is: "+decorS);
-else decor.setVisibility(View.INVISIBLE);
+else    hall.setText("Your Hall: "+"None");
 
-String food1="";
+if(decorS!=null)
+   decor.setText("Your decoration price is: "+decorS);
+else    decor.setText("Your decoration price is: "+"None");
+
+
+
      if(appetizerS!=null)
-         food1="You choose : "+appetizerS;
-     if(dessertS!=null)
-         food1+=" , "+dessertS;
-     if(mainS!=null)
-         food1+= " , "+mainS;
-     if(cakeS!=null)
-         food1+=" , "+cakeS;
-     if(food1!="")
-      food.setText(food1);
-     else food.setVisibility(View.INVISIBLE);
+         food1.setText("Your appetizer price is: "+appetizerS);
+     else          food1.setText("Your appetizer price is: "+"None");
+
+        if(dessertS!=null)
+         food2.setText( "Your dessert price is: "+dessertS);
+        else          food2.setText("Your dessert price is: "+"None");
+
+        if(mainS!=null)
+            food3.setText("Your main course price is: "+mainS);
+        else          food3.setText("Your main course price is: "+"None");
+
+        if(cakeS!=null)
+         food4.setText("Your cake price is: "+cakeS);
+     else          food4.setText("Your cake price is: "+"None");
+
 
         if(photographerS!=null)
      photographer.setText("Your photographer is: "+photographerS);
-        else photographer.setVisibility(View.INVISIBLE);
+        else      photographer.setText("Your photographer is: "+"None");
+
 
         if(makeupS!=null)
         makeup.setText("Your makeup artist is: "+makeupS);
-        else makeup.setVisibility(View.INVISIBLE);
+        else        makeup.setText("Your makeup artist is: "+"None");
 
         if(hairS!=null)
         hair.setText("Your hair dresser is: "+hairS);
-        else hair.setVisibility(View.INVISIBLE);
+        else         hair.setText("Your hair dresser is: "+"None");
+
 
         if(customS!=null)
-        custom.setText("Your custom is: "+customS);
-        else custom.setVisibility(View.INVISIBLE);
+        custom.setText("Your custom price is: "+customS);
+        else         custom.setText("Your custom price is: "+"None");
+
 
 
 
         // set text for music
-        String mucis1="";
         if(singerS!=null)
-            mucis1="singer: "+singerS;
-         if(djS!=null)
-           mucis1+="  Dj: "+djS;
+            music.setText("Your singer is: "+singerS);
+else{
+        if(djS!=null)
+            music.setText("Your DJ is: "+djS);
+        else {
          if(bandS!=null)
-             mucis1+="  Band: "+bandS;
-         if(mucis1!="")
-            music.setText(mucis1);
-         else music.setVisibility(View.INVISIBLE);
+             music.setText("Your Band is: "+bandS);
+         else             music.setText("Your music is: "+"None");}}
 
         // set text for clown
-        if(type.equals("Birthday")) {
+
             if(clownS!=null)
             clown.setText("Your Clown is: "+clownS);
-            clown.setVisibility(View.VISIBLE);
-        }
+           else             clown.setText("Your Clown is: "+"None");
+
+
 
         // if the user want to cancel the party
         cancel=(Button) findViewById(R.id.cancel);
@@ -258,6 +279,35 @@ String food1="";
                 notification.setContentIntent( pendingIntent );
                 NotificationManager nm = (NotificationManager) getSystemService( NOTIFICATION_SERVICE );
                 nm.notify(uniqueID, notification.build());
+
+
+                ///////// set dates for chosen
+                databaseReference = FirebaseDatabase.getInstance().getReference(HallActivity.DATABASE_PATH);
+
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        progressDialog.dismiss();
+                        list.clear();
+
+                        for(DataSnapshot snap : dataSnapshot.getChildren()){
+
+                            Hall hall = snap.getValue(Hall.class);
+                            // if(location.equals( hall.location )) {
+                            if (hallS.equals( hall )) {
+                              hall.dates.add( date );
+
+                            }
+                        }
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
 
 

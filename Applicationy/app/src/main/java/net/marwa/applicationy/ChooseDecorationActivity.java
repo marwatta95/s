@@ -113,7 +113,7 @@ public class ChooseDecorationActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                    intent1.putExtra( "decorS", decorChosen[0].getPrice() );
+                    intent1.putExtra( "decorS", Double.toString(decorChosen[0].getPrice()) );
                 //        intent1.putExtra("decorO", decorChosen);
                         Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();
                         dialog.dismiss();
