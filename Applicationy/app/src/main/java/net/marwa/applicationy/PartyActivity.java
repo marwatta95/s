@@ -282,32 +282,7 @@ else{
 
 
                 ///////// set dates for chosen
-                databaseReference = FirebaseDatabase.getInstance().getReference(HallActivity.DATABASE_PATH);
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        progressDialog.dismiss();
-                        list.clear();
-
-                        for(DataSnapshot snap : dataSnapshot.getChildren()){
-
-                            Hall hall = snap.getValue(Hall.class);
-                            // if(location.equals( hall.location )) {
-                            if (hallS.equals( hall )) {
-                              hall.dates.add( date );
-
-                            }
-                        }
-
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
 
 
 

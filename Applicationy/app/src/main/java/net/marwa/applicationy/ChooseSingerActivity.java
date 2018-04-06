@@ -28,6 +28,7 @@ import java.util.List;
 public class ChooseSingerActivity extends AppCompatActivity {
     ListView listView;
     List<Singer> list;
+    String singerP;
     ProgressDialog progressDialog;
     final ArrayList<String> keyList = new ArrayList<>();
     private DatabaseReference databaseReference;
@@ -75,6 +76,30 @@ public class ChooseSingerActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.show();
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("Party");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                list.clear();
+
+                for(DataSnapshot snap : dataSnapshot.getChildren()){
+
+                    Party party = snap.getValue(Party.class);
+                    if (party.date.equals( date ))
+                        singerP=party.singer;
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
         databaseReference = FirebaseDatabase.getInstance().getReference(SingerActivity.DATABASE_PATH);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -87,9 +112,8 @@ public class ChooseSingerActivity extends AppCompatActivity {
                     keyList.add(snap.getKey());
 
                     Singer singer = snap.getValue(Singer.class);
-                    if(!singer.dates.contains(date)){
-                        list.add(singer);
-                    }
+                    if (!singer.getName().equals( singerP ))
+                        list.add( singer );
 
 
                 }

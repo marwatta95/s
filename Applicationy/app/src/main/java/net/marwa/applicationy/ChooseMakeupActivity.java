@@ -26,6 +26,7 @@ import java.util.List;
 
 public class ChooseMakeupActivity extends AppCompatActivity {
     ListView listView;
+String makeupP;
     List<MakeUp> list;
     ProgressDialog progressDialog;
     final ArrayList<String> keyList = new ArrayList<>();
@@ -78,6 +79,28 @@ public class ChooseMakeupActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
         progressDialog.show();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Party");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                list.clear();
+
+                for(DataSnapshot snap : dataSnapshot.getChildren()){
+
+                    Party party = snap.getValue(Party.class);
+                    if (party.date.equals( date ))
+                        makeupP=party.makeup;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference(MakeupActivity.DATABASE_PATH);
 
@@ -91,9 +114,8 @@ public class ChooseMakeupActivity extends AppCompatActivity {
                     keyList.add(snap.getKey());
 
                     MakeUp makeUp = snap.getValue(MakeUp.class);
-                    if(!makeUp.dates.contains(date)){
-                        list.add(makeUp);
-                    }
+                    if (!makeUp.getName().equals( makeUp ))
+                        list.add( makeUp );
 
 
                 }

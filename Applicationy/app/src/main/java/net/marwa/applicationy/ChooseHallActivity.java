@@ -29,12 +29,16 @@ public class ChooseHallActivity extends AppCompatActivity {
     ListView listView;
 
     List<Hall> list;
+    String hallP;
     ProgressDialog progressDialog;
     final ArrayList<String> keyList = new ArrayList<>();
     private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference1;
+
     public static final String DATABASE_PATH = "Halls";
     MyAdapterChooseHall myAdapter;
     private Button next;
+    private Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +65,34 @@ public class ChooseHallActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.show();
 
-        databaseReference = FirebaseDatabase.getInstance().getReference(HallActivity.DATABASE_PATH);
-
+        databaseReference = FirebaseDatabase.getInstance().getReference("Party");
         databaseReference.addValueEventListener(new ValueEventListener() {
+
+
             @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                list.clear();
+
+                for(DataSnapshot snap : dataSnapshot.getChildren()){
+
+                    Party party = snap.getValue(Party.class);
+                    if (party.date.equals( date ))
+                    hallP=party.hall;
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        databaseReference = FirebaseDatabase.getInstance().getReference(HallActivity.DATABASE_PATH);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+
+
+                @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 progressDialog.dismiss();
                 list.clear();
@@ -76,9 +104,9 @@ public class ChooseHallActivity extends AppCompatActivity {
               // if(location.equals( hall.location )) {
                     int guest = Integer.parseInt( guests );
                     if ((hall.capacity >= guest) && (hall.capacity <= guest + 50)) {
-                        if (!hall.dates.contains( date ))
-                            list.add( hall );
 
+                        if (!hall.getName().equals( hallP ))
+                            list.add( hall );
                 }
                 }
                 myAdapter = new MyAdapterChooseHall(ChooseHallActivity.this,R.layout.data_items_choose_hall,list);
@@ -154,5 +182,21 @@ public class ChooseHallActivity extends AppCompatActivity {
 
             }
         });
+        home=(Button) findViewById(R.id.home);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseHallActivity.this, UserHomeActivity.class));
+
+
+
+
+            }
+        });
+
     }
 }

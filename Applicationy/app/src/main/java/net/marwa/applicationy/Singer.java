@@ -7,7 +7,6 @@ import java.util.LinkedList;
 public class Singer implements Serializable{
     String first,last,phone;
     double price;
-    LinkedList<String> dates=new LinkedList<String>();
 
     public Singer(String first,String last, String phone,double price) {
         this.first=first;

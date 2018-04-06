@@ -27,7 +27,8 @@ import java.util.List;
 public class ChooseHairActivity extends AppCompatActivity {
     ListView listView;
     List<Hair> list;
-    ProgressDialog progressDialog;
+String hairP;
+ProgressDialog progressDialog;
     final ArrayList<String> keyList = new ArrayList<>();
     private DatabaseReference databaseReference;
     MyadapterChooseHair myAdapter;
@@ -86,6 +87,28 @@ public class ChooseHairActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.show();
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("Party");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                list.clear();
+
+                for(DataSnapshot snap : dataSnapshot.getChildren()){
+
+                    Party party = snap.getValue(Party.class);
+                    if (party.date.equals( date ))
+                       hairP=party.hair;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         databaseReference = FirebaseDatabase.getInstance().getReference(HairActivity.DATABASE_PATH);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -98,9 +121,8 @@ public class ChooseHairActivity extends AppCompatActivity {
                     keyList.add(snap.getKey());
 
                     Hair hair = snap.getValue(Hair.class);
-                    if(!hair.dates.contains(date)){
-                        list.add(hair);
-                    }
+                    if (!hair.getName().equals( hairP ))
+                        list.add( hair );
 
 
                 }

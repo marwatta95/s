@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="The Singers you have.\nJust click to delete!"
+                android:text="The Heads you have."
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -58,7 +58,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimary"
                 android:onClick="uploadData"
-                android:text="ADD Singer"
+                android:text="ADD Head"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimary"
                 android:onClick="uploadData"
-                android:text="ADD the new Singer"
+                android:text="ADD the new Head"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 

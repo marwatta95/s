@@ -9,7 +9,6 @@ public class Hall implements Serializable {
     String name,description,address;
     int capacity;double price;
     String imageUri;
-    LinkedList<String> dates=new LinkedList<String>();
     String location;
 
     public Hall(String name, String description,String address,int capacity,double price, String imageUri,String location) {

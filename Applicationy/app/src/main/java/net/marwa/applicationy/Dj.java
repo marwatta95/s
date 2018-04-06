@@ -7,7 +7,6 @@ import java.util.LinkedList;
 public class Dj implements Serializable{
     String first,last,phone;
     double price;
-    LinkedList<String> dates=new LinkedList<String>();
 
     public Dj(String first,String last, String phone,double price) {
         this.first=first;

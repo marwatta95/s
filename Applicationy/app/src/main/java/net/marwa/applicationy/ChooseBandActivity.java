@@ -28,7 +28,9 @@ import java.util.List;
 public class ChooseBandActivity extends AppCompatActivity {
     ListView listView;
     List<Band> list;
-    ProgressDialog progressDialog;
+
+String bandP;
+ProgressDialog progressDialog;
     final ArrayList<String> keyList = new ArrayList<>();
     private DatabaseReference databaseReference;
     MyAdapterChooseBand myAdapter;
@@ -73,6 +75,29 @@ public class ChooseBandActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.show();
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("Party");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                list.clear();
+
+                for(DataSnapshot snap : dataSnapshot.getChildren()){
+
+                    Party party = snap.getValue(Party.class);
+                    if (party.date.equals( date ))
+                       bandP=party.band;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
         databaseReference = FirebaseDatabase.getInstance().getReference(BandActivity.DATABASE_PATH);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -85,9 +110,8 @@ public class ChooseBandActivity extends AppCompatActivity {
                     keyList.add(snap.getKey());
 
                    Band band = snap.getValue(Band.class);
-                    if(!band.dates.contains(date)){
-                        list.add(band);
-                    }
+                    if (!band.getFirst().equals( bandP ))
+                        list.add( band );
 
 
                 }

@@ -9,7 +9,6 @@ public class Clown implements Serializable {
     String name;
     double price;
     String imageUri;
-    LinkedList<String> dates=new LinkedList<String>();
 
 
     public Clown(String name,double price, String imageUri) {

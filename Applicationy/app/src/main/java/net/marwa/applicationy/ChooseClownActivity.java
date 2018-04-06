@@ -27,7 +27,8 @@ import java.util.List;
 public class ChooseClownActivity extends AppCompatActivity {
     ListView listView;
     List<Clown> list;
-    ProgressDialog progressDialog;
+String clownP;
+ProgressDialog progressDialog;
     final ArrayList<String> keyList = new ArrayList<>();
     private DatabaseReference databaseReference;
     MyAdapterChooseClown myAdapter;
@@ -82,6 +83,28 @@ public class ChooseClownActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.show();
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("Party");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                list.clear();
+
+                for(DataSnapshot snap : dataSnapshot.getChildren()){
+
+                    Party party = snap.getValue(Party.class);
+                    if (party.date.equals( date ))
+                     clownP=party.clown;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         databaseReference = FirebaseDatabase.getInstance().getReference(ClownActivity.DATABASE_PATH);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -94,9 +117,8 @@ public class ChooseClownActivity extends AppCompatActivity {
                     keyList.add(snap.getKey());
 
                     Clown clown = snap.getValue(Clown.class);
-                    if(!clown.dates.contains(date)){
-                        list.add(clown);
-                    }
+                    if (!clown.getName().equals( clownP ))
+                        list.add( clown );
 
 
                 }

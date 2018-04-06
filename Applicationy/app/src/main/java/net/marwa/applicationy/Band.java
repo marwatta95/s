@@ -8,7 +8,6 @@ public class Band implements Serializable{
     String first,phone;
     int last;
     double price;
-    LinkedList<String> dates=new LinkedList<String>();
 
     public Band(String first,int last, String phone,double price) {
         this.first=first;
