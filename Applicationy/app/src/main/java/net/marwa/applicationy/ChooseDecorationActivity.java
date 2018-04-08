@@ -35,6 +35,7 @@ public class ChooseDecorationActivity extends AppCompatActivity {
     public static final String DATABASE_PATH = "Decoration";
     MyAdapterChooseDecor myAdapter;
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -146,6 +147,22 @@ public class ChooseDecorationActivity extends AppCompatActivity {
             //    intent1.putExtra("bundle",bundle1);
 
                 startActivity(intent1);
+
+
+
+
+            }
+        });
+
+        home=(Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseDecorationActivity.this, UserHomeActivity.class));
 
 
 

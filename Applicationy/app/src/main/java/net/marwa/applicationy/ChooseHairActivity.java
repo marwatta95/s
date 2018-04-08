@@ -33,6 +33,7 @@ ProgressDialog progressDialog;
     private DatabaseReference databaseReference;
     MyadapterChooseHair myAdapter;
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -216,6 +217,21 @@ ProgressDialog progressDialog;
                 intent1.putExtra("makeupO",makeupo);*/
 
                 startActivity(intent1);
+
+
+
+
+            }
+        });
+        home=(Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseHairActivity.this, UserHomeActivity.class));
 
 
 

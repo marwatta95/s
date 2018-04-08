@@ -35,6 +35,7 @@ ProgressDialog progressDialog;
     MyAdapterChooseDj myAdapter;
 
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -195,6 +196,21 @@ ProgressDialog progressDialog;
                 intent1.putExtra( "cakeO", cakeO );
                 intent1.putExtra("photographerO",photographerO);*/
                 startActivity(intent1);
+            }
+        });
+        home=(Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseDjActivity.this, UserHomeActivity.class));
+
+
+
+
             }
         });
     }

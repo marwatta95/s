@@ -33,6 +33,7 @@ ProgressDialog progressDialog;
     private DatabaseReference databaseReference;
     MyAdapterChooseClown myAdapter;
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -221,6 +222,22 @@ ProgressDialog progressDialog;
 
 
                 startActivity(intent1);
+
+
+
+
+            }
+        });
+
+        home=(Button) findViewById(R.id.home);
+
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseClownActivity.this, UserHomeActivity.class));
 
 
 

@@ -39,6 +39,7 @@ public class ChooseHallActivity extends AppCompatActivity {
     MyAdapterChooseHall myAdapter;
     private Button next;
     private Button home;
+    TextView noResult ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +109,13 @@ public class ChooseHallActivity extends AppCompatActivity {
                         if (!hall.getName().equals( hallP ))
                             list.add( hall );
                 }
+                else{
+                        noResult=(TextView)findViewById(R.id.noResult);
+                        noResult.setText("no results fits with the number of geust you required \n but we displays a halls with gesut number greater than or less than you required ");
+
+                        if (!hall.getName().equals( hallP ))
+                            list.add( hall );
+                    }
                 }
                 myAdapter = new MyAdapterChooseHall(ChooseHallActivity.this,R.layout.data_items_choose_hall,list);
                 listView.setAdapter(myAdapter);
@@ -184,7 +192,7 @@ public class ChooseHallActivity extends AppCompatActivity {
         });
         home=(Button) findViewById(R.id.home);
 
-        next.setOnClickListener(new View.OnClickListener() {
+        home.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
 

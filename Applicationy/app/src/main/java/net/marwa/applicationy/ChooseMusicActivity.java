@@ -33,6 +33,7 @@ public class ChooseMusicActivity extends AppCompatActivity {
     private Button band;
     private Button singer;
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -200,6 +201,21 @@ public class ChooseMusicActivity extends AppCompatActivity {
                 intent1.putExtra( "cakeO", cakeO );
                 intent1.putExtra("photographerO",photographerO);*/
                 startActivity(intent4);
+
+
+
+
+            }
+        });
+        home=(Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseMusicActivity.this, UserHomeActivity.class));
 
 
 

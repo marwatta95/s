@@ -33,6 +33,7 @@ public class ChooseCustomActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     MyAdapterChooseCustom myAdapter;
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -204,6 +205,21 @@ public class ChooseCustomActivity extends AppCompatActivity {
 
 
                 startActivity(intent1);
+
+
+
+
+            }
+        });
+        home=(Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseCustomActivity.this, UserHomeActivity.class));
 
 
 

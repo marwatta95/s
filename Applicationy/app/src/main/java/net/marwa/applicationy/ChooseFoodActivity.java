@@ -39,6 +39,7 @@ public class ChooseFoodActivity extends AppCompatActivity {
     MyAdapterChooseFood myAdapter2;
     MyAdapterChooseFood myAdapter3;
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -278,6 +279,21 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
 
                 startActivity(intent1);
+
+
+
+
+            }
+        });
+        home=(Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseFoodActivity.this, UserHomeActivity.class));
 
 
 

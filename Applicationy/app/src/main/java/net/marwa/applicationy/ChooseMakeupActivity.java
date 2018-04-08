@@ -33,6 +33,7 @@ String makeupP;
     private DatabaseReference databaseReference;
     MyAdapterChooseMakeup myAdapter;
     private Button next;
+    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -206,6 +207,21 @@ String makeupP;
                 intent1.putExtra("singerO",singerO);
                 intent1.putExtra("bandO",bandO);*/
                 startActivity(intent1);
+
+
+
+
+            }
+        });
+        home=(Button) findViewById(R.id.home);
+
+        home.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
+
+
+                startActivity(new Intent(ChooseMakeupActivity.this, UserHomeActivity.class));
 
 
 
