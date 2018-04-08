@@ -1,4 +1,5 @@
 package net.marwa.applicationy;
+import android.app.Notification;
 import android.app.ProgressDialog;
 import android.provider.SyncStateContract;
 import android.support.v4.app.NotificationCompat;
@@ -58,6 +59,7 @@ public class PartyActivity extends AppCompatActivity {
     private TextView hair;
     private DatabaseReference dr;
     private  Party party;
+    private UserNotification UN;
     private Head yourHead;
     List<Head> list;
     List<Hall> list1;
@@ -264,6 +266,9 @@ else{
                 int index = new Random().nextInt(list.size());
                 yourHead = list.get(index);
 
+                UN=new UserNotification( date,yourHead.getName(),yourHead.getPhone(),pushId );
+
+                dr.child("Notification").child(id).setValue(UN);
 
                 notification.setSmallIcon( R.mipmap.ic_launcher );
                 notification.setTicker( "YOUR HEAD " );
@@ -274,7 +279,7 @@ else{
                 notification.setContentText( "This head is been assigned to help you in your party and makes sure you are fully satisfied \n "+yourHead );
 
                 Intent intent=new Intent(getApplicationContext(),NotificationActivity.class);
-                intent.putExtra( "notification","This head is been assigned to help you in your party and makes sure you are fully satisfied \nName: "+yourHead.getFirst()+"\n"+yourHead.getLast()+"\nPhone Number: "+yourHead.getPhone() );
+                intent.putExtra( "notification","This head is been assigned to help you in your party and makes sure you are fully satisfied \nName: "+yourHead.getName()+"\nPhone Number: "+yourHead.getPhone() );
                 PendingIntent pendingIntent=PendingIntent.getActivity(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
                 notification.setContentIntent( pendingIntent );
                 NotificationManager nm = (NotificationManager) getSystemService( NOTIFICATION_SERVICE );
