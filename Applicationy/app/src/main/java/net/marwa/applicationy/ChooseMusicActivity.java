@@ -33,7 +33,6 @@ public class ChooseMusicActivity extends AppCompatActivity {
     private Button band;
     private Button singer;
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -78,8 +77,8 @@ public class ChooseMusicActivity extends AppCompatActivity {
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "When words fail, music speaks !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseMusicActivity.this, UserHomeActivity.class));
+
             }
         } );
 
@@ -207,21 +206,7 @@ public class ChooseMusicActivity extends AppCompatActivity {
 
             }
         });
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseMusicActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
 
     }
 

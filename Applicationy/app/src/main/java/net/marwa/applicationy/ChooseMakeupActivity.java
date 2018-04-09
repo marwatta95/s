@@ -33,7 +33,6 @@ String makeupP;
     private DatabaseReference databaseReference;
     MyAdapterChooseMakeup myAdapter;
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -139,8 +138,8 @@ String makeupP;
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "If you are sad,add more lipstick and attack !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseMakeupActivity.this, UserHomeActivity.class));
+
             }
         } );
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -213,21 +212,7 @@ String makeupP;
 
             }
         });
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseMakeupActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 
 }

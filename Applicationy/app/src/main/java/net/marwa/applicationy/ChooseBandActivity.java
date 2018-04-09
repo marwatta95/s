@@ -36,7 +36,6 @@ ProgressDialog progressDialog;
     MyAdapterChooseBand myAdapter;
 
     private Button next;
-    private Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,8 +133,8 @@ ProgressDialog progressDialog;
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "It is so much more than just a band !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseBandActivity.this, UserHomeActivity.class));
+
             }
         } );
 
@@ -203,20 +202,6 @@ ProgressDialog progressDialog;
             }
         });
 
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseBandActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 }

@@ -39,7 +39,6 @@ public class ChooseFoodActivity extends AppCompatActivity {
     MyAdapterChooseFood myAdapter2;
     MyAdapterChooseFood myAdapter3;
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -121,8 +120,8 @@ public class ChooseFoodActivity extends AppCompatActivity {
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "Food is the ingredient that binds us together !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseFoodActivity.this, UserHomeActivity.class));
+
             }
         } );
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -285,20 +284,6 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
             }
         });
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseFoodActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 }

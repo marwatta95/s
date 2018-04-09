@@ -35,7 +35,6 @@ public class ChooseDecorationActivity extends AppCompatActivity {
     public static final String DATABASE_PATH = "Decoration";
     MyAdapterChooseDecor myAdapter;
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -96,8 +95,8 @@ public class ChooseDecorationActivity extends AppCompatActivity {
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "Everything has a place, and everything in its place !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseDecorationActivity.this, UserHomeActivity.class));
+
             }
         } );
         // get what the user choose and put it in intent
@@ -154,20 +153,6 @@ public class ChooseDecorationActivity extends AppCompatActivity {
             }
         });
 
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseDecorationActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 }

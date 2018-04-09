@@ -17,12 +17,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/home"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Home" />
+
 
         <ImageButton
             android:id="@+id/hall"
@@ -62,7 +57,6 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/colorPrimaryDark"
-            android:drawableLeft="@drawable/nexticon"
             android:text="NEXT" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

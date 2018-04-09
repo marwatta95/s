@@ -15,12 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
-        <Button
-            android:id="@+id/home"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Home" />
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -145,7 +140,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
-        android:drawableLeft="@drawable/nexticon"
         android:text="NEXT" />
     </LinearLayout>
 

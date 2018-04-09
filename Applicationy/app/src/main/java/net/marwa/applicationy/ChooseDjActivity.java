@@ -35,7 +35,6 @@ ProgressDialog progressDialog;
     MyAdapterChooseDj myAdapter;
 
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -131,8 +130,8 @@ ProgressDialog progressDialog;
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "The best thing about being a DJ is making people happy !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseDjActivity.this, UserHomeActivity.class));
+
             }
         } );
 
@@ -198,20 +197,6 @@ ProgressDialog progressDialog;
                 startActivity(intent1);
             }
         });
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseDjActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 }

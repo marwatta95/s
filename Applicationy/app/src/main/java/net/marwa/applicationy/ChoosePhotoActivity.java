@@ -36,7 +36,6 @@ public class ChoosePhotoActivity extends AppCompatActivity {
     MyAdapterChoosePhoto myAdapter;
 
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -133,8 +132,8 @@ public class ChoosePhotoActivity extends AppCompatActivity {
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "A photograph is the pause buton of life !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChoosePhotoActivity.this, UserHomeActivity.class));
+
             }
         } );
 
@@ -202,20 +201,6 @@ public class ChoosePhotoActivity extends AppCompatActivity {
 
             }
         });
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChoosePhotoActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 }

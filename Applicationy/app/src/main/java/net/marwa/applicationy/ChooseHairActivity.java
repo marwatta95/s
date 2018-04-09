@@ -33,7 +33,6 @@ ProgressDialog progressDialog;
     private DatabaseReference databaseReference;
     MyadapterChooseHair myAdapter;
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -146,8 +145,8 @@ ProgressDialog progressDialog;
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "Your hair is 90% of your selfie !! Be careful !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseHairActivity.this, UserHomeActivity.class));
+
             }
         } );
 
@@ -223,21 +222,7 @@ ProgressDialog progressDialog;
 
             }
         });
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseHairActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 
 }

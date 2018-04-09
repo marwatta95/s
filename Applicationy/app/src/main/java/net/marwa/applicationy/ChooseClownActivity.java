@@ -33,7 +33,6 @@ ProgressDialog progressDialog;
     private DatabaseReference databaseReference;
     MyAdapterChooseClown myAdapter;
     private Button next;
-    private Button home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -142,8 +141,8 @@ ProgressDialog progressDialog;
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "WELL !! you can always be a clown !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseClownActivity.this, UserHomeActivity.class));
+
             }
         } );
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -229,21 +228,7 @@ ProgressDialog progressDialog;
             }
         });
 
-        home=(Button) findViewById(R.id.home);
 
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseClownActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
     }
 
 }

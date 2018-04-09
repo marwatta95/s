@@ -40,7 +40,7 @@ public class ChooseHallActivity extends AppCompatActivity {
     public static final String DATABASE_PATH = "Halls";
     MyAdapterChooseHall myAdapter;
     private Button next;
-    private Button home;
+
     TextView noResult ;
 
     @Override
@@ -153,8 +153,7 @@ noResult.setVisibility( View.GONE );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make( view, "Some people look for a beautiful space.others make a place beautiful !!", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
+                startActivity(new Intent(ChooseHallActivity.this, UserHomeActivity.class));
             }
         } );
 
@@ -210,21 +209,7 @@ noResult.setVisibility( View.GONE );
 
             }
         });
-        home=(Button) findViewById(R.id.home);
 
-        home.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-                startActivity(new Intent(ChooseHallActivity.this, UserHomeActivity.class));
-
-
-
-
-            }
-        });
 
     }
 }
