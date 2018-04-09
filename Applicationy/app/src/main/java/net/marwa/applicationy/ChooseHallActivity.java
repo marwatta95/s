@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChooseHallActivity extends AppCompatActivity {
-    ExpandableListView listView;
+    ListView listView;
     List<Hall> extraList;
 
     List<Hall> list;
@@ -49,7 +49,7 @@ public class ChooseHallActivity extends AppCompatActivity {
         setContentView( R.layout.activity_choose_hall2 );
         Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar );
         setSupportActionBar( toolbar );
-        listView=(ExpandableListView) findViewById( R.id.list1);
+        listView=(ListView) findViewById( R.id.list1);
 noResult=findViewById( R.id.noResult );
 noResult.setVisibility( View.GONE );
 
@@ -78,7 +78,7 @@ noResult.setVisibility( View.GONE );
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 list.clear();
-                extraList.clear();
+
                 for(DataSnapshot snap : dataSnapshot.getChildren()){
 
                     Party party = snap.getValue(Party.class);
@@ -102,13 +102,14 @@ noResult.setVisibility( View.GONE );
             public void onDataChange(DataSnapshot dataSnapshot) {
                 progressDialog.dismiss();
                 list.clear();
-
+                    extraList.clear();
                 for(DataSnapshot snap : dataSnapshot.getChildren()){
                     keyList.add(snap.getKey());
 
                     Hall hall = snap.getValue(Hall.class);
 
                     extraList.add(hall);
+               //     Toast.makeText( getApplicationContext(), , Toast.LENGTH_SHORT).show();
               // if(location.equals( hall.location )) {
                     int guest = Integer.parseInt( guests );
                     if ((hall.capacity >= guest) && (hall.capacity <= guest + 50)) {
@@ -123,15 +124,21 @@ noResult.setVisibility( View.GONE );
                 {
                     noResult.setVisibility( View.VISIBLE );
                     noResult.setText( "No halls with the same capacity you chose!!\nIf you like those halls are available..." );
-                    for(int i=0;i<extraList.size();i++)
+                   /* int size=extraList.size();
+                     list=extraList;
+           while(!extraList.isEmpty())
                     {
-                    list.add(extraList.remove(i));
-                    }
+                    list.add(extraList.remove(0));
+                    }*/
 
+                    myAdapter = new MyAdapterChooseHall(ChooseHallActivity.this,R.layout.data_items_choose_hall,extraList);
+                    listView.setAdapter(myAdapter);
 
                 }
+                else
+                {
                 myAdapter = new MyAdapterChooseHall(ChooseHallActivity.this,R.layout.data_items_choose_hall,list);
-                listView.setAdapter(myAdapter);
+                listView.setAdapter(myAdapter);}
 
             }
 
