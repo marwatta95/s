@@ -229,7 +229,7 @@ private TextView textLocation;
                     double priceDouble=Double.parseDouble(price);
                     String capacity = editTextCapacity.getText().toString();
                     int capacityint=Integer.parseInt(capacity);
-                    String location = spinner.getSelectedItem().toString();
+                    String location =(String) spinner.getSelectedItem().toString();
 
 
                     Hall hall = new Hall(NAME,des,address,capacityint,priceDouble, taskSnapshot.getDownloadUrl().toString(),location);

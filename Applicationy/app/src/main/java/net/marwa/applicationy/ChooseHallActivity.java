@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChooseHallActivity extends AppCompatActivity {
-    ListView listView;
+    ExpandableListView listView;
+    List<Hall> extraList;
 
     List<Hall> list;
     String hallP;
@@ -47,8 +49,9 @@ public class ChooseHallActivity extends AppCompatActivity {
         setContentView( R.layout.activity_choose_hall2 );
         Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar );
         setSupportActionBar( toolbar );
-        listView=(ListView) findViewById( R.id.list1);
-
+        listView=(ExpandableListView) findViewById( R.id.list1);
+noResult=findViewById( R.id.noResult );
+noResult.setVisibility( View.GONE );
 
         Intent intent = getIntent();
         final  Intent intent1=new Intent(ChooseHallActivity.this, ChooseDecorationActivity.class);
@@ -62,6 +65,8 @@ public class ChooseHallActivity extends AppCompatActivity {
 
 
         list = new ArrayList<>();
+        extraList = new ArrayList<>();
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
         progressDialog.show();
@@ -73,7 +78,7 @@ public class ChooseHallActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 list.clear();
-
+                extraList.clear();
                 for(DataSnapshot snap : dataSnapshot.getChildren()){
 
                     Party party = snap.getValue(Party.class);
@@ -102,6 +107,8 @@ public class ChooseHallActivity extends AppCompatActivity {
                     keyList.add(snap.getKey());
 
                     Hall hall = snap.getValue(Hall.class);
+
+                    extraList.add(hall);
               // if(location.equals( hall.location )) {
                     int guest = Integer.parseInt( guests );
                     if ((hall.capacity >= guest) && (hall.capacity <= guest + 50)) {
@@ -109,13 +116,19 @@ public class ChooseHallActivity extends AppCompatActivity {
                         if (!hall.getName().equals( hallP ))
                             list.add( hall );
                 }
-                else{
-                        noResult=(TextView)findViewById(R.id.noResult);
-                        noResult.setText("no results fits with the number of geust you required \n but we displays a halls with gesut number greater than or less than you required ");
 
-                        if (!hall.getName().equals( hallP ))
-                            list.add( hall );
+                }
+
+                if(list.size()==0)
+                {
+                    noResult.setVisibility( View.VISIBLE );
+                    noResult.setText( "No halls with the same capacity you chose!!\nIf you like those halls are available..." );
+                    for(int i=0;i<extraList.size();i++)
+                    {
+                    list.add(extraList.remove(i));
                     }
+
+
                 }
                 myAdapter = new MyAdapterChooseHall(ChooseHallActivity.this,R.layout.data_items_choose_hall,list);
                 listView.setAdapter(myAdapter);
