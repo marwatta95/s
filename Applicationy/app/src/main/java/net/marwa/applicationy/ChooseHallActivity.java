@@ -40,7 +40,7 @@ public class ChooseHallActivity extends AppCompatActivity {
     public static final String DATABASE_PATH = "Halls";
     MyAdapterChooseHall myAdapter;
     private Button next;
-
+TextView fits;
     TextView noResult ;
 
     @Override
@@ -107,7 +107,7 @@ noResult.setVisibility( View.GONE );
                     keyList.add(snap.getKey());
 
                     Hall hall = snap.getValue(Hall.class);
-
+                    if (!hall.getName().equals( hallP ))
                     extraList.add(hall);
                //     Toast.makeText( getApplicationContext(), , Toast.LENGTH_SHORT).show();
               // if(location.equals( hall.location )) {
@@ -122,14 +122,9 @@ noResult.setVisibility( View.GONE );
 
                 if(list.size()==0)
                 {
-                    noResult.setVisibility( View.VISIBLE );
-                    noResult.setText( "No halls with the same capacity you chose!!\nIf you like those halls are available..." );
-                   /* int size=extraList.size();
-                     list=extraList;
-           while(!extraList.isEmpty())
-                    {
-                    list.add(extraList.remove(0));
-                    }*/
+                    fits=(TextView) findViewById( R.id .textViewUserEmail);
+                    fits.setText( "No Results!! Those are available if you would like.." );
+
 
                     myAdapter = new MyAdapterChooseHall(ChooseHallActivity.this,R.layout.data_items_choose_hall,extraList);
                     listView.setAdapter(myAdapter);
@@ -156,42 +151,81 @@ noResult.setVisibility( View.GONE );
                 startActivity(new Intent(ChooseHallActivity.this, UserHomeActivity.class));
             }
         } );
+        if(list.size()!=0) {
+            listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                    //**********************************************************************
+                    hallChosen[0] = list.get( position );
+                    AlertDialog.Builder alert = new AlertDialog.Builder(
+                            ChooseHallActivity.this );
+                    alert.setTitle( "Confirm" );
+                    alert.setMessage( "Are you sure you want this hall? " );
+                    alert.setPositiveButton( "YES", new DialogInterface.OnClickListener() {
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,final int position, long id) {
-                //**********************************************************************
-                hallChosen[0] =list.get(position);
-                AlertDialog.Builder alert = new AlertDialog.Builder(
-                        ChooseHallActivity.this );
-                alert.setTitle( "Confirm" );
-                alert.setMessage( "Are you sure you want this hall? " );
-                alert.setPositiveButton( "YES", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //*********************************************************
+                            intent1.putExtra( "hallS", (String) hallChosen[0].getName() );
+                            //            intent1.putExtra("bundle",bundle);
+                            //   intent1.putExtra("hallO", hallChosen);
+                            Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();
+                            dialog.dismiss();
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //*********************************************************
-                       intent1.putExtra( "hallS",(String) hallChosen[0].getName() );
-           //            intent1.putExtra("bundle",bundle);
-                     //   intent1.putExtra("hallO", hallChosen);
-                        Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();
-                        dialog.dismiss();
+                        }
+                    } );
+                    alert.setNegativeButton( "NO", new DialogInterface.OnClickListener() {
 
-                    }
-                } );
-                alert.setNegativeButton( "NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    } );
 
-                        dialog.dismiss();
-                    }
-                } );
+                    alert.show();
 
-                alert.show();
+                }
+            } );
+        }
+        else {
+            listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                    //**********************************************************************
+                    hallChosen[0] = extraList.get( position );
+                    AlertDialog.Builder alert = new AlertDialog.Builder(
+                            ChooseHallActivity.this );
+                    alert.setTitle( "Confirm" );
+                    alert.setMessage( "Are you sure you want this hall? " );
+                    alert.setPositiveButton( "YES", new DialogInterface.OnClickListener() {
 
-            }
-        });
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //*********************************************************
+                            intent1.putExtra( "hallS", (String) hallChosen[0].getName() );
+                            //            intent1.putExtra("bundle",bundle);
+                            //   intent1.putExtra("hallO", hallChosen);
+                            Toast.makeText( getApplicationContext(), "Chosen Successfully!!!", Toast.LENGTH_LONG ).show();
+                            dialog.dismiss();
+
+                        }
+                    } );
+                    alert.setNegativeButton( "NO", new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            dialog.dismiss();
+                        }
+                    } );
+
+                    alert.show();
+
+                }
+            } );
+
+        }
         next=(Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

@@ -9,6 +9,7 @@ public class UserNotification {
     String headName;
     String headPhone;
     public String pushID;
+
 public UserNotification(String partyDate,String headName,String headPhone,String pushID)
 {
     this.partyDate=partyDate;

@@ -70,7 +70,7 @@ public class NotificationActivity extends AppCompatActivity {
         } );
 
 
-        listView = (ListView) findViewById(R.id.list11);
+        listView = (ListView) findViewById(R.id.list1);
         databaseReference = FirebaseDatabase.getInstance().getReference(DATABASE_PATH);
 
 

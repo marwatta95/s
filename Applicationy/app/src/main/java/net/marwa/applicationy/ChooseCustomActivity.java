@@ -98,10 +98,10 @@ public class ChooseCustomActivity extends AppCompatActivity {
 
                 for(DataSnapshot snap : dataSnapshot.getChildren()){
                     keyList.add(snap.getKey());
-
                     Custom custom = snap.getValue(Custom.class);
-                    list.add(custom);
-
+                    if(custom.getType().equals(  type)) {
+                        list.add( custom );
+                    }
 
 
                 }
