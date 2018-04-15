@@ -41,7 +41,7 @@ public class UserHomeActivity extends AppCompatActivity
     private static int NUM_PAGES = 0;
     private ArrayList<ImageModel> imageModelArrayList;
 
-    private int[] myImageList = new int[]{R.drawable.s1};
+    private int[] myImageList = new int[]{R.drawable.s11,R.drawable.s22,R.drawable.s33,R.drawable.s44};
 
 
 
@@ -92,7 +92,7 @@ public class UserHomeActivity extends AppCompatActivity
 
         ArrayList<ImageModel> list = new ArrayList<>();
 
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < 4; i++){
             ImageModel imageModel = new ImageModel();
             imageModel.setImage_drawable(myImageList[i]);
             list.add(imageModel);
