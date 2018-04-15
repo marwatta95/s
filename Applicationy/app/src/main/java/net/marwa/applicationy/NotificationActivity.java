@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,7 +36,7 @@ public class NotificationActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     TextView textView;
-    private Button buttonSave;
+    private Button buttonSave,buttonOk;
     public static final String DATABASE_PATH = "Notification";
 
     @Override
@@ -44,18 +45,33 @@ public class NotificationActivity extends AppCompatActivity {
         setContentView( R.layout.activity_notification );
         Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar );
         setSupportActionBar( toolbar );
+        buttonSave=(Button) findViewById(R.id.buttonSave);
 
         String type1="No new notifications";
         textView=(TextView) findViewById( R.id.textNotification ) ;
         Intent intent = getIntent();
         if(intent.getExtras().getString( "notification" )!=null)
           type1 = intent.getStringExtra( "notification" );
-
+if (type1.equals( "No new notification" ))
+    buttonSave.setVisibility( View.GONE );
         textView.setText( type1 );
         buttonSave=(Button) findViewById(R.id.buttonSave);
         buttonSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), PaymentActivity.class));
+
+
+
+            }
+        });
+
+        buttonOk=(Button) findViewById(R.id.buttonOk);
+        buttonOk.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
                 startActivity(new Intent(getApplicationContext(), UserHomeActivity.class));
+
 
 
             }
@@ -99,10 +115,13 @@ public class NotificationActivity extends AppCompatActivity {
 
                         list.add(userNotification);}
                 }
+                for(int i=0;i<list.size();i++)
+                    Toast.makeText( getApplicationContext(), list.get( i ).partyDate, Toast.LENGTH_LONG ).show();
                 myAdapter = new NotificationAdapter (NotificationActivity.this,R.layout.notification_dataitems,list);
                 listView.setAdapter(myAdapter);
 
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {

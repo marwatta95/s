@@ -103,7 +103,13 @@
         <activity
             android:name=".MyPartiesActivity"
             android:label="@string/title_activity_my_parties"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
+        <activity android:name=".PaymentActivity" />
     </application>
 
 </manifest>

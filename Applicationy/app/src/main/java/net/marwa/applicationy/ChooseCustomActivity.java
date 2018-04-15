@@ -47,6 +47,9 @@ public class ChooseCustomActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final  Intent intent1=new Intent(ChooseCustomActivity.this, PartyActivity.class);
+
+        final String act = intent.getExtras().getString( "Activity" );
+
         final String type = intent.getExtras().getString( "type" );
         final String date = intent.getExtras().getString( "date" );
         final String guests = intent.getExtras().getString( "guests" );
@@ -117,6 +120,7 @@ public class ChooseCustomActivity extends AppCompatActivity {
 
             }
         });
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -124,7 +128,7 @@ public class ChooseCustomActivity extends AppCompatActivity {
                 startActivity(new Intent(ChooseCustomActivity.this, UserHomeActivity.class));
 
             }
-        } );
+        } );*/
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,final int position, long id) {
@@ -159,6 +163,8 @@ public class ChooseCustomActivity extends AppCompatActivity {
             }
         });
         next=(Button) findViewById(R.id.next);
+        if(!act.equals( "hi" )){next.setText( "Back To Confirmation" );}
+
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 

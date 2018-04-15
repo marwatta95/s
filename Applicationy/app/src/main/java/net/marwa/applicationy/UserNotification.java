@@ -10,6 +10,7 @@ public class UserNotification {
     String headPhone;
     public String pushID;
 
+    public UserNotification(){}
 public UserNotification(String partyDate,String headName,String headPhone,String pushID)
 {
     this.partyDate=partyDate;

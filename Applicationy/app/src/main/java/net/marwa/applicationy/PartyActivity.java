@@ -1,6 +1,8 @@
 package net.marwa.applicationy;
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.provider.SyncStateContract;
 import android.support.v4.app.NotificationCompat;
 
@@ -103,18 +105,345 @@ Hall hallO;
         list1 = new ArrayList<>();
 
         hall = (TextView)findViewById(R.id.textViewHall);
+        hall.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+              Intent in=new Intent(getApplicationContext(), ChooseHallActivity.class);
+              in.putExtra( "Activity","party" );
+
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+              //  in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+
+                startActivity(in);
+            }
+        });
         decor = (TextView)findViewById(R.id.textViewDecor);
+        decor.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseDecorationActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+               // in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         food1 = (TextView)findViewById(R.id.textViewFood1);
+        food1.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseFoodActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+               // in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         food2 = (TextView)findViewById(R.id.textViewFood2);
+        food2.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseFoodActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+              //  in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         food3 = (TextView)findViewById(R.id.textViewFood3);
+        food3.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseFoodActivity.class);
+                in.putExtra( "Activity","party" );
+
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+               // in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         food4 = (TextView)findViewById(R.id.textViewFood4);
+        food4.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseFoodActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+              //  in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
 
         photographer = (TextView)findViewById(R.id.textViewPhoto);
+        photographer.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChoosePhotoActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+               // in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         clown = (TextView) findViewById(R.id.textViewClown);
+        clown.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseClownActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                //in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         music = (TextView)findViewById(R.id.textViewMusic);
+        music.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseMusicActivity.class);
+                in.putExtra( "Activity","party" );
+
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+              //  in.putExtra( "singerS", singerS );
+               // in.putExtra( "djS", djS );
+              //  in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         makeup=(TextView)findViewById(R.id.textViewMakeup);
+        makeup.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseMakeupActivity.class);
+                in.putExtra( "Activity","party" );
+
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+             //   in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+
+                startActivity(in);
+            }
+        });
         hair=(TextView)findViewById(R.id.textViewHairDresser);
+        hair.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseHairActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+               // in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+                in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
         custom = (TextView)findViewById(R.id.textViewCustom);
+        custom.setOnClickListener(new View.OnClickListener()   {
+            public void onClick(View v)  {
+
+                Intent in=new Intent(getApplicationContext(), ChooseCustomActivity.class);
+                in.putExtra( "Activity","party" );
+                in.putExtra( "type", type );
+                in.putExtra( "date", date );
+                in.putExtra( "guests", guests );
+                in.putExtra( "location", location );
+                in.putExtra( "hallS", hallS );
+                in.putExtra( "decorS", decorS );
+                in.putExtra( "appetizerS", appetizerS );
+                in.putExtra( "mainS", mainS );
+                in.putExtra( "dessertS", dessertS );
+                in.putExtra( "cakeS", cakeS );
+                in.putExtra("photoS",photographerS);
+                in.putExtra( "singerS", singerS );
+                in.putExtra( "djS", djS );
+                in.putExtra( "bandS", bandS );
+                in.putExtra( "makeupS", makeupS );
+                in.putExtra( "hairS", hairS );
+                in.putExtra( "clownS", clownS );
+              //  in.putExtra( "customS", customS );
+
+                startActivity(in);
+            }
+        });
 if(hallS!=null)
    hall.setText("Your hall is: "+hallS);
 else    hall.setText("Your Hall: "+"None");
@@ -188,7 +517,30 @@ else{
         cancel.setOnClickListener(new View.OnClickListener()   {
             public void onClick(View v)  {
 
-                startActivity(new Intent(getApplicationContext(), UserHomeActivity.class));
+                AlertDialog.Builder alert = new AlertDialog.Builder(
+                        PartyActivity.this );
+                alert.setTitle( "Confirm" );
+                alert.setMessage( "Are you sure you want to cancel? " );
+                alert.setPositiveButton( "YES", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //*********************************************************
+                        startActivity(new Intent(getApplicationContext(), UserHomeActivity.class));
+                        dialog.dismiss();
+
+                    }
+                } );
+                alert.setNegativeButton( "NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+                    }
+                } );
+
+                alert.show();
 
             }
         });
@@ -284,6 +636,8 @@ else{
                 notification.setContentIntent( pendingIntent );
                 NotificationManager nm = (NotificationManager) getSystemService( NOTIFICATION_SERVICE );
                 nm.notify(uniqueID, notification.build());
+
+
 
 
                 ///////// set dates for chosen

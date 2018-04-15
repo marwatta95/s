@@ -61,6 +61,8 @@ private Spinner spinner;
                 String location = spinner.getSelectedItem().toString();
 
                 Intent intent = new Intent( UserFirstActivity.this, ChooseHallActivity.class );
+                intent.putExtra( "Activity", "hi" );
+
                 intent.putExtra( "type", type );
                 intent.putExtra( "date", date );
                 intent.putExtra( "guests", guests );
@@ -72,14 +74,14 @@ private Spinner spinner;
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserFirstActivity.this, UserHomeActivity.class));
 
             }
-        });
+        });*/
     }
 
 }

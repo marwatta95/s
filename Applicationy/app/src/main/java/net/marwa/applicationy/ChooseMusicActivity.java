@@ -46,6 +46,8 @@ public class ChooseMusicActivity extends AppCompatActivity {
         final  Intent intent2=new Intent(ChooseMusicActivity.this, ChooseDjActivity.class);
         final  Intent intent3=new Intent(ChooseMusicActivity.this, ChooseSingerActivity.class);
         final  Intent intent4=new Intent(ChooseMusicActivity.this,ChooseMakeupActivity.class);
+        final String act = intent.getExtras().getString( "Activity" );
+
         final String type = intent.getExtras().getString( "type" );
         final String date = intent.getExtras().getString( "date" );
         final String guests = intent.getExtras().getString( "guests" );
@@ -73,20 +75,23 @@ public class ChooseMusicActivity extends AppCompatActivity {
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
+     /*   FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ChooseMusicActivity.this, UserHomeActivity.class));
 
             }
-        } );
+        } );*/
 
 
         dj=(Button) findViewById(R.id.buttonDj);
         dj.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                   if (act.equals( "hi" ))
+                intent2.putExtra( "Activity", "hi" );
+                       else
+                       intent2.putExtra( "Activity", "party" );
 
                 intent2.putExtra( "type", type );
                 intent2.putExtra( "date", date );
@@ -117,8 +122,10 @@ public class ChooseMusicActivity extends AppCompatActivity {
         band=(Button) findViewById(R.id.buttonBand);
         band.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
+                if (act.equals( "hi" ))
+                    intent1.putExtra( "Activity", "hi" );
+                else
+                    intent1.putExtra( "Activity", "party" );
                 intent1.putExtra( "type", type );
                 intent1.putExtra( "date", date );
                 intent1.putExtra( "guests", guests );
@@ -149,6 +156,10 @@ public class ChooseMusicActivity extends AppCompatActivity {
         singer=(Button) findViewById(R.id.buttonSinger);
         singer.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if (act.equals( "hi" ))
+                    intent3.putExtra( "Activity", "hi" );
+                else
+                    intent3.putExtra( "Activity", "party" );
 
                 intent3.putExtra( "type", type );
                 intent3.putExtra( "date", date );
@@ -180,7 +191,10 @@ public class ChooseMusicActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-
+                if (act.equals( "hi" ))
+                    intent4.putExtra( "Activity", "hi" );
+                else
+                    intent4.putExtra( "Activity", "party" );
                 intent4.putExtra( "type", type );
                 intent4.putExtra( "date", date );
                 intent4.putExtra( "guests", guests );

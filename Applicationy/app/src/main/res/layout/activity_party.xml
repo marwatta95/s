@@ -1,59 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="net.marwa.applicationy.PartyActivity"
+    android:orientation="vertical"
     android:background="#e6e6ff">
-
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-
-    <ScrollView
-        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginBottom="10dp"
-        android:fillViewport="true">
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="20dp"
-            android:padding="15dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="450dp"
             android:orientation="vertical"
-            android:background="@drawable/rectangle"
-            >
+            android:background="@drawable/rectangle">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            <!-- -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
 
 
             <TextView
                 android:id="@+id/textViewHall"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
                 android:text="Hall : None"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
                 />
 
 
             <TextView
                 android:id="@+id/textViewDecor"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Decoration : None"
                 />
@@ -61,36 +69,44 @@
             <TextView
                 android:id="@+id/textViewFood1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Food : None"
                 />
             <TextView
                 android:id="@+id/textViewFood2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Food : None"
                 />
             <TextView
                 android:id="@+id/textViewFood3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Food : None"
                 />
             <TextView
                 android:id="@+id/textViewFood4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Food : None"
                 />
@@ -98,9 +114,11 @@
             <TextView
                 android:id="@+id/textViewPhoto"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Photographer : None"
                 />
@@ -109,9 +127,11 @@
             <TextView
                 android:id="@+id/textViewMusic"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Music : None"
                 />
@@ -120,9 +140,11 @@
             <TextView
                 android:id="@+id/textViewMakeup"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="MakeUp Artist : None"
                 />
@@ -131,9 +153,11 @@
             <TextView
                 android:id="@+id/textViewHairDresser"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Hair Dresser : None"
                 />
@@ -141,9 +165,11 @@
             <TextView
                 android:id="@+id/textViewCustom"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Costume : None"
                 />
@@ -151,9 +177,11 @@
             <TextView
                 android:id="@+id/textViewClown"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="20dp"
+                android:drawableRight="@drawable/ic_menu_manage"
+                android:paddingBottom="10dp"
 
                 android:text="Clown : None"
 
@@ -161,8 +189,14 @@
 
 
 
+            </LinearLayout>
+            </ScrollView>
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
+    </LinearLayout>
+
+
             <Button
                 android:id="@+id/confirm"
                 android:layout_width="match_parent"
@@ -192,8 +226,5 @@
                 android:textStyle="bold"
                 android:layout_margin="5dp"
                 />
+</LinearLayout>
 
-    </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>

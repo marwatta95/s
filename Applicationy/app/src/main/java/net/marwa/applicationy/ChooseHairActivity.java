@@ -46,11 +46,8 @@ ProgressDialog progressDialog;
         final  Intent intent1;
 
         final String type = intent.getExtras().getString( "type" );
-        if(type.equals( "Birthday" ))
 
-            intent1 =new Intent(ChooseHairActivity.this, ChooseClownActivity.class);
-        else
-            intent1 =new Intent(ChooseHairActivity.this, ChooseCustomActivity.class);
+        final String act = intent.getExtras().getString( "Activity" );
 
         final String date = intent.getExtras().getString( "date" );
         final String guests = intent.getExtras().getString( "guests" );
@@ -68,6 +65,46 @@ ProgressDialog progressDialog;
         final String makeupS = intent.getStringExtra( "makeupS" );
 
         final Hair[] hairChoosen=new Hair[1];
+
+
+        if(act.equals( "party" ))
+        {
+            intent1 =new Intent(ChooseHairActivity.this, PartyActivity.class);
+
+
+            final String clownS=intent.getStringExtra("clownS");
+            final String customS=intent.getStringExtra("customS");
+
+
+            intent1.putExtra( "djS", djS );
+            intent1.putExtra( "customS", customS );
+            intent1.putExtra( "type", type );
+            intent1.putExtra( "date", date );
+            intent1.putExtra( "guests", guests );
+            intent1.putExtra( "location", location );
+            intent1.putExtra( "hallS", hallS );
+            intent1.putExtra( "decorS", decorS );
+            intent1.putExtra( "appetizerS", appetizerS );
+            intent1.putExtra( "mainS", mainS );
+            intent1.putExtra( "dessertS", dessertS );
+            intent1.putExtra( "cakeS", cakeS );
+            intent1.putExtra("photoS",photographerS);
+            intent1.putExtra( "singerS", singerS );
+            intent1.putExtra( "bandS", bandS );
+            intent1.putExtra( "makeupS", makeupS );
+          //  intent1.putExtra( "hairS", hairS );
+            intent1.putExtra( "clownS", clownS );
+        }
+
+        else
+        {
+            if(type.equals( "Birthday" ))
+
+                intent1 =new Intent(ChooseHairActivity.this, ChooseClownActivity.class);
+            else
+                intent1 =new Intent(ChooseHairActivity.this, ChooseCustomActivity.class);
+
+            intent1.putExtra( "Activity", "hi" );}
     /*    final Hall hallO=(Hall)intent.getSerializableExtra("hallO");
         final Decor decorO=(Decor)intent.getSerializableExtra("decorO");
         final Food appetizerO=(Food)intent.getSerializableExtra("appetizerO");
@@ -141,7 +178,7 @@ ProgressDialog progressDialog;
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
+     /*   FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,7 +186,7 @@ ProgressDialog progressDialog;
 
             }
         } );
-
+*/
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,final int position, long id) {
@@ -184,6 +221,8 @@ ProgressDialog progressDialog;
             }
         });
         next=(Button) findViewById(R.id.next);
+        if(!act.equals( "hi" )){next.setText( "Back To Confirmation" );}
+
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 

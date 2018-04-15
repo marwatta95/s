@@ -52,7 +52,10 @@ public class ChooseFoodActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        final  Intent intent1=new Intent(ChooseFoodActivity.this, ChoosePhotoActivity.class);
+        final  Intent intent1;
+
+        final String act = intent.getExtras().getString( "Activity" );
+
         final String type = intent.getExtras().getString( "type" );
         final String date = intent.getExtras().getString( "date" );
         final String guests = intent.getExtras().getString( "guests" );
@@ -60,6 +63,51 @@ public class ChooseFoodActivity extends AppCompatActivity {
         final String hallS=intent.getStringExtra("hallS");
         final String decorS=intent.getStringExtra("decorS");
         final Food[] foodChosen = new Food[1];
+
+        if(act.equals( "party" ))
+        {
+            intent1 =new Intent(ChooseFoodActivity.this, PartyActivity.class);
+
+
+            final String photographerS = intent.getStringExtra("photoS" );
+            final String singerS = intent.getStringExtra( "singerS" );
+            final String djS = intent.getStringExtra( "djS" );
+            final String bandS =  intent.getStringExtra( "bandS" );
+            final String makeupS = intent.getStringExtra( "makeupS" );
+            final String hairS = intent.getStringExtra( "hairS" );
+            final String clownS=intent.getStringExtra("clownS");
+            final String customS=intent.getStringExtra("customS");
+
+
+
+            intent1.putExtra( "djS", djS );
+            intent1.putExtra( "customS", customS );
+            intent1.putExtra( "type", type );
+            intent1.putExtra( "date", date );
+            intent1.putExtra( "guests", guests );
+            intent1.putExtra( "location", location );
+            intent1.putExtra( "hallS", hallS );
+            intent1.putExtra( "decorS", decorS );
+           // intent1.putExtra( "appetizerS", appetizerS );
+            //intent1.putExtra( "mainS", mainS );
+            //intent1.putExtra( "dessertS", dessertS );
+            //intent1.putExtra( "cakeS", cakeS );
+            intent1.putExtra("photoS",photographerS);
+            intent1.putExtra( "singerS", singerS );
+            intent1.putExtra( "bandS", bandS );
+            intent1.putExtra( "makeupS", makeupS );
+            intent1.putExtra( "hairS", hairS );
+            intent1.putExtra( "clownS", clownS );
+
+        }
+
+        else
+        {
+            intent1 =new Intent(ChooseFoodActivity.this, ChoosePhotoActivity.class);
+
+            intent1.putExtra( "Activity", "hi" );
+
+        }
 
         /*  final Hall hallO=(Hall)intent.getSerializableExtra("hallO");
         final Decor decorO=(Decor)intent.getSerializableExtra("decorO");*/
@@ -116,14 +164,14 @@ public class ChooseFoodActivity extends AppCompatActivity {
         });
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ChooseFoodActivity.this, UserHomeActivity.class));
 
             }
-        } );
+        } );*/
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,final int position, long id) {
@@ -262,6 +310,8 @@ public class ChooseFoodActivity extends AppCompatActivity {
             }
         });
         next=(Button) findViewById(R.id.next);
+        if(!act.equals( "hi" )){next.setText( "Back To Confirmation" );}
+
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 

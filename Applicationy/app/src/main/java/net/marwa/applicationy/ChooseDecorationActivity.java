@@ -45,17 +45,67 @@ public class ChooseDecorationActivity extends AppCompatActivity {
 
 
         final Intent intent = getIntent();
-        final  Intent intent1=new Intent(ChooseDecorationActivity.this, ChooseFoodActivity.class);
+        final  Intent intent1;
       //  final Bundle bundle1=new Bundle();
   //      final Bundle bundle= getIntent().getExtras();
 
         final Decor[] decorChosen = new Decor[1];
         //get the info from last activity
+
+        final String act = intent.getExtras().getString( "Activity" );
+
         final String type = intent.getExtras().getString( "type" );
         final String date = intent.getExtras().getString( "date" );
         final String guests = intent.getExtras().getString( "guests" );
         final String location = intent.getExtras().getString( "location" );
         final String hallS=intent.getStringExtra("hallS");
+
+        if(act.equals( "party" ))
+        {
+            intent1 =new Intent(ChooseDecorationActivity.this, PartyActivity.class);
+
+            final String appetizerS = intent.getStringExtra( "appetizerS" );
+            final String mainS = intent.getStringExtra( "mainS" );
+            final String dessertS = intent.getStringExtra( "dessertS" );
+            final String cakeS = intent.getStringExtra( "cakeS" );
+            final String photographerS = intent.getStringExtra("photoS" );
+            final String singerS = intent.getStringExtra( "singerS" );
+            final String djS = intent.getStringExtra( "djS" );
+            final String bandS =  intent.getStringExtra( "bandS" );
+            final String makeupS = intent.getStringExtra( "makeupS" );
+            final String hairS = intent.getStringExtra( "hairS" );
+            final String clownS=intent.getStringExtra("clownS");
+            final String customS=intent.getStringExtra("customS");
+
+
+            intent1.putExtra( "djS", djS );
+            intent1.putExtra( "customS", customS );
+            intent1.putExtra( "type", type );
+            intent1.putExtra( "date", date );
+            intent1.putExtra( "guests", guests );
+            intent1.putExtra( "location", location );
+            intent1.putExtra( "hallS", hallS );
+           // intent1.putExtra( "decorS", decorS );
+            intent1.putExtra( "appetizerS", appetizerS );
+            intent1.putExtra( "mainS", mainS );
+            intent1.putExtra( "dessertS", dessertS );
+            intent1.putExtra( "cakeS", cakeS );
+            intent1.putExtra("photoS",photographerS);
+            intent1.putExtra( "singerS", singerS );
+            intent1.putExtra( "bandS", bandS );
+            intent1.putExtra( "makeupS", makeupS );
+            intent1.putExtra( "hairS", hairS );
+            intent1.putExtra( "clownS", clownS );
+
+        }
+
+        else
+        {
+            intent1 =new Intent(ChooseDecorationActivity.this, ChooseFoodActivity.class);
+
+            intent1.putExtra( "Activity", "hi" );
+
+        }
         // there is an exception
  //       final Hall hallO=(Hall)(intent.getSerializableExtra("hallO"));
         // show the decorations available to the user
@@ -91,14 +141,14 @@ public class ChooseDecorationActivity extends AppCompatActivity {
         });
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
+      /*  FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ChooseDecorationActivity.this, UserHomeActivity.class));
 
             }
-        } );
+        } ); */
         // get what the user choose and put it in intent
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -134,6 +184,8 @@ public class ChooseDecorationActivity extends AppCompatActivity {
             }
         });
         next=(Button) findViewById(R.id.next);
+        if(!act.equals( "hi" )){next.setText( "Back To Confirmation" );}
+
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 

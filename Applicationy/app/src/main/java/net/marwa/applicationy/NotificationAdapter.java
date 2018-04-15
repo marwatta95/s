@@ -41,17 +41,17 @@ public class NotificationAdapter extends ArrayAdapter<UserNotification> {
         TextView date = (TextView) view.findViewById(R.id.dateLeft);
         String dateLeft=list.get(position).partyDate;
 
-        if(dateLeft !=null) date.setText(dateLeft);
+        date.setText(dateLeft);
 
         TextView name = (TextView) view.findViewById(R.id.name);
         String headName=list.get(position).headName;
 
-        if(headName !=null) name.setText(headName);
+         name.setText(headName);
 
         TextView phone = (TextView) view.findViewById(R.id.phone);
         String phoneNum=list.get(position).headPhone;
 
-        if(phoneNum !=null) phone.setText(phoneNum);
+      phone.setText(phoneNum);
 
 
         return view;
