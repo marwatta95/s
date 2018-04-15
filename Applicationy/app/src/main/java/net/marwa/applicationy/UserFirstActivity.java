@@ -74,14 +74,14 @@ private Spinner spinner;
             }
         });
 
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UserFirstActivity.this, UserHomeActivity.class));
 
             }
-        });*/
+        });
     }
 
 }

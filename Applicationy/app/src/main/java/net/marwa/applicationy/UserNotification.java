@@ -11,12 +11,15 @@ public class UserNotification {
     public String pushID;
 
     public UserNotification(){}
-public UserNotification(String partyDate,String headName,String headPhone,String pushID)
+public UserNotification(String partyDate,String headName,String headPhone)
 {
     this.partyDate=partyDate;
     this.headName=headName;
     this.headPhone=headPhone;
-    this.pushID=pushID;
+
 
 }
+    public void setPushID(String pushID){
+        this.pushID=pushID;
+    }
 }

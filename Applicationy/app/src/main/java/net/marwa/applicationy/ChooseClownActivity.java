@@ -176,7 +176,7 @@ ProgressDialog progressDialog;
 
 
 
-/*
+
         FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -184,7 +184,7 @@ ProgressDialog progressDialog;
                 startActivity(new Intent(ChooseClownActivity.this, UserHomeActivity.class));
 
             }
-        } );*/
+        } );
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,final int position, long id) {

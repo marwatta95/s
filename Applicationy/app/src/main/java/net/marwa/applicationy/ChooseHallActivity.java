@@ -192,14 +192,14 @@ noResult.setVisibility( View.GONE );
             }
         });
 
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
+        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ChooseHallActivity.this, UserHomeActivity.class));
             }
         } );
-        */
+
         if(list.size()!=0) {
             listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
                 @Override

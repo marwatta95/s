@@ -60,14 +60,17 @@ public class PartyActivity extends AppCompatActivity {
     private TextView makeup;
     private TextView hair;
     private DatabaseReference dr;
+
     private  Party party;
-    private UserNotification UN;
+    private UserNotification uN;
     private Head yourHead;
     List<Head> list;
     List<Hall> list1;
     private StorageReference storageReference;
    Hall h;
 Hall hallO;
+    public   static final String uu="Notification";
+
  public   static final String aa="Party";
 
     @Override
@@ -611,16 +614,21 @@ else{
                 //    final User user2 = (User) (user.getClass()).addParty(party);
 
                 progressDialog.dismiss();
-                Toast.makeText( getApplicationContext(), "your party has been reserved", Toast.LENGTH_LONG ).show();
+                Toast.makeText( getApplicationContext(), "your party has been reserved ", Toast.LENGTH_LONG ).show();
 
+                DatabaseReference notRef = getInstance().getReference(uu).child(uid);
+                String pushId1 = notRef.getKey();
 
 
                 int index = new Random().nextInt(list.size());
                 yourHead = list.get(index);
 
-                UN=new UserNotification( date,yourHead.getName(),yourHead.getPhone(),pushId );
 
-                dr.child("Notification").child(id).setValue(UN);
+
+                uN=new UserNotification( date,yourHead.getName(),yourHead.getPhone());
+                uN.setPushID(pushId1);
+
+                dr.child("Notification").child(id).setValue(uN);
 
                 notification.setSmallIcon( R.mipmap.ic_launcher );
                 notification.setTicker( "YOUR HEAD " );

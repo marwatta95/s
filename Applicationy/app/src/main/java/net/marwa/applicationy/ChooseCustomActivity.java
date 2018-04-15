@@ -120,7 +120,7 @@ public class ChooseCustomActivity extends AppCompatActivity {
 
             }
         });
-        /*
+
         FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -128,7 +128,7 @@ public class ChooseCustomActivity extends AppCompatActivity {
                 startActivity(new Intent(ChooseCustomActivity.this, UserHomeActivity.class));
 
             }
-        } );*/
+        } );
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,final int position, long id) {

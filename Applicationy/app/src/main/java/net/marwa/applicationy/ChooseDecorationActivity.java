@@ -141,14 +141,14 @@ public class ChooseDecorationActivity extends AppCompatActivity {
         });
 
 
-      /*  FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
+       FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ChooseDecorationActivity.this, UserHomeActivity.class));
 
             }
-        } ); */
+        } );
         // get what the user choose and put it in intent
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
