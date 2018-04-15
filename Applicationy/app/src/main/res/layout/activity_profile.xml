@@ -44,7 +44,7 @@
             android:layout_gravity="left"
             android:text="Your Information:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#F5B041"
             android:textStyle="bold" />
         <EditText
             android:id="@+id/editTextFirstName"
@@ -77,12 +77,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male"
+                android:textColor="@android:color/white"
                 android:checked="true" />
 
             <RadioButton
                 android:id="@+id/radioFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+
                 android:text="Female" />
 
         </RadioGroup>
@@ -94,7 +97,7 @@
             android:layout_height="wrap_content"
             android:text="Date Of Birth:"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#F5B041"
             android:textStyle="bold" />
         <DatePicker
             android:id="@+id/datePicker"
@@ -113,21 +116,24 @@
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/nextbutton"
             android:text="Save"
-            android:textStyle="bold" />
+            android:textColor="@android:color/white"
+
+          />
 
         <Button
             android:id="@+id/buttonLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/nextbutton"
             android:text="Cancel"
-            android:textStyle="bold" />
+            android:textColor="@android:color/white"
+            />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="The Decorations you have.\nJust click to delete!"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#F5B041"
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -56,7 +56,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/nextbutton"
             android:onClick="uploadData"
             android:text="ADD Decoration"
             android:textColor="@android:color/white"
@@ -78,6 +78,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:onClick="browseImages"
+            android:textColor="@android:color/white"
+            android:background="@drawable/nextbutton"
+
             android:text="Upload Image"
             android:textStyle="bold" />
         <ImageView
@@ -95,19 +98,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wedding"
-                android:checked="true" />
+                android:checked="true"
+                android:textColor="@android:color/white"
+                />
 
             <RadioButton
                 android:id="@+id/radioBirthday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Birthday" />
+                android:text="Birthday"
+                android:textColor="@android:color/white"
+                />
 
             <RadioButton
                 android:id="@+id/radioGraduation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Graduation" />
+                android:text="Graduation"
+                android:textColor="@android:color/white"
+                />
         </RadioGroup>
 
             <Button
@@ -115,21 +124,24 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/nextbutton"
                 android:onClick="uploadData"
+                android:layout_marginBottom="20dp"
                 android:text="ADD the new Decoration"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
+
             <Button
                 android:id="@+id/buttonLogout"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/nextbutton"
+                android:fontFamily="sans-serif"
                 android:text="Logout"
                 android:textColor="@android:color/white"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
 

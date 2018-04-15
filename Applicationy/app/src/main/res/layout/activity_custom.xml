@@ -36,7 +36,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="The Customes you have.\nJust click to delete!"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#F5B041"
                 android:textStyle="bold" />
 
             <ScrollView
@@ -56,8 +56,9 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/nextbutton"
                 android:onClick="uploadData"
+
                 android:text="ADD Custom"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
@@ -77,6 +78,9 @@
                 android:layout_gravity="center_horizontal"
                 android:onClick="browseImages"
                 android:text="Upload Image"
+                android:background="@drawable/nextbutton"
+                android:textColor="@android:color/white"
+
                 android:textStyle="bold" />
 
             <ImageView
@@ -95,19 +99,25 @@
                     android:id="@+id/radioWedding"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wedding" />
+                    android:text="Wedding"
+                    android:textColor="@android:color/white"
+                    />
 
                 <RadioButton
                     android:id="@+id/radioBirthday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Birthday" />
+                    android:text="Birthday"
+                    android:textColor="@android:color/white"
+                    />
 
                 <RadioButton
                     android:id="@+id/radioGraduation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Graduatin" />
+                    android:text="Graduatin"
+                    android:textColor="@android:color/white"
+                    />
             </RadioGroup>
 
                 <Button
@@ -116,24 +126,25 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/nextbutton"
+                    android:layout_marginBottom="20dp"
                     android:onClick="uploadData"
                     android:text="ADD the new custom"
                     android:textColor="@android:color/white"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/buttonLogout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
 
-                    android:background="@color/colorPrimary"
-
-                    android:text="Logout"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonLogout"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/nextbutton"
+                android:fontFamily="sans-serif"
+                android:text="Logout"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
 
 

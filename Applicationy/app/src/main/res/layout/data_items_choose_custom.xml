@@ -2,48 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#e6e6ff">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:background="@drawable/rectangle">
-            <android.support.v4.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="#e6e6ff"
+    >
         <ImageView
             android:id="@+id/getImages"
             android:layout_width="120dp"
@@ -79,11 +40,3 @@
         </LinearLayout>
                             </LinearLayout>
 
-                        </LinearLayout>
-                    </ScrollView>
-                </LinearLayout>
-            </ScrollView>
-            </android.support.v4.widget.NestedScrollView>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>

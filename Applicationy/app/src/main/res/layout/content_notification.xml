@@ -25,10 +25,12 @@
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="40dp"
             android:layout_marginBottom="30dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/nextbutton"
+            android:textColor="@android:color/white"
             android:text="Proceed To Payment"
             android:textStyle="bold" />
 
@@ -39,7 +41,7 @@
             android:layout_gravity="center_horizontal"
             android:text="Past Notifications"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#F5B041"
             android:textStyle="bold" />
         <ScrollView
             android:layout_width="match_parent"
@@ -55,9 +57,11 @@
 
         <Button
             android:id="@+id/buttonOk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="40dp"
+            android:background="@drawable/nextbutton"
+            android:textColor="@android:color/white"
             android:text="OK"
             android:textStyle="bold" />
     </LinearLayout>

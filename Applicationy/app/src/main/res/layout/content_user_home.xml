@@ -48,10 +48,10 @@ app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
     <Button
         android:id="@+id/makeMyParty"
-        android:layout_width="354dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="250dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/nextbutton"
         android:text="Make My Party"
         android:textColor="@android:color/white"
         android:textStyle="bold"

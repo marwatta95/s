@@ -25,23 +25,15 @@
             android:layout_height="wrap_content"
             android:background="@drawable/music" />
 
-        <TextView
-            android:id="@+id/textViewUserEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="40dp"
-            android:text="What kind of music do you prefer??"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/buttonDj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="#F5B041"
+            android:textColor="@android:color/white"
 
             android:text="DJ"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -52,8 +44,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
+            android:textColor="@android:color/white"
 
-            android:background="@color/colorPrimaryDark"
+            android:background="#F5B041"
 
             android:text="Band" />
 
@@ -62,16 +55,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
+            android:textColor="@android:color/white"
 
-            android:background="@color/colorPrimaryDark"
+            android:background="#F5B041"
 
             android:text="Singer" />
 
+
         <Button
             android:id="@+id/next"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/colorPrimaryDark"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="40dp"
+            android:background="@drawable/nextbutton"
+            android:textColor="@android:color/white"
+
             android:text="NEXT" />
 
     </LinearLayout>

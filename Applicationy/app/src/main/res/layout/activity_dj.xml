@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/colorPrimary"
+            android:textColor="#F5B041"
             android:textStyle="bold"
             android:text="The DJs you have.\nJust click to delete!"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -54,7 +54,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/nextbutton"
             android:onClick="uploadData"
             android:text="ADD DJ"
             android:textColor="@android:color/white"
@@ -91,23 +91,24 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/nextbutton"
             android:onClick="uploadData"
             android:text="ADD the new DJ"
+            android:layout_marginBottom="20dp"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
+
         <Button
             android:id="@+id/buttonLogout"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-
-            android:background="@color/colorPrimary"
-
+            android:background="@drawable/nextbutton"
+            android:fontFamily="sans-serif"
             android:text="Logout"
             android:textColor="@android:color/white"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
 

@@ -73,7 +73,7 @@ private Spinner spinner;
                 Toast.makeText(getApplicationContext(),"All fields are required!! ",Toast.LENGTH_LONG).show();
             }
         });
-
+/*
        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +81,7 @@ private Spinner spinner;
                 startActivity(new Intent(UserFirstActivity.this, UserHomeActivity.class));
 
             }
-        });
+        });*/
     }
 
 }
