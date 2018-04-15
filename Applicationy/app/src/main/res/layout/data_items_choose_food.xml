@@ -17,6 +17,10 @@
             android:orientation="vertical"
             android:background="@drawable/rectangle">
 
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,6 +85,7 @@
                     </ScrollView>
                 </LinearLayout>
             </ScrollView>
+            </android.support.v4.widget.NestedScrollView>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

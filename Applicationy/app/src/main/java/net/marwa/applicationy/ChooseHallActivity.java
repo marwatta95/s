@@ -145,8 +145,6 @@ noResult.setVisibility( View.GONE );
 
         databaseReference = FirebaseDatabase.getInstance().getReference(HallActivity.DATABASE_PATH);
         databaseReference.addValueEventListener(new ValueEventListener() {
-
-
                 @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 progressDialog.dismiss();
