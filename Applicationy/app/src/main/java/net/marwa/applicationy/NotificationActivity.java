@@ -76,14 +76,7 @@ if (type1.equals( "No new notification" ))
 
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab );
-        fab.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make( view, "Replace with your own action", Snackbar.LENGTH_LONG )
-                        .setAction( "Action", null ).show();
-            }
-        } );
+
 
 
         listView = (ListView) findViewById(R.id.list1);
@@ -116,7 +109,7 @@ if (type1.equals( "No new notification" ))
                         list.add(userNotification);}
                 }
                 for(int i=0;i<list.size();i++)
-                    Toast.makeText( getApplicationContext(), list.get( i ).partyDate, Toast.LENGTH_LONG ).show();
+                //    Toast.makeText( getApplicationContext(), list.get( i ).partyDate, Toast.LENGTH_LONG ).show();
                 myAdapter = new NotificationAdapter (NotificationActivity.this,R.layout.notification_dataitems,list);
                 listView.setAdapter(myAdapter);
 
